@@ -1,0 +1,23 @@
+---
+const links = [
+    {
+        label: "Projects",
+        href: "/projects",
+    },
+    {
+        label: "Contact",
+        href: "/contact",
+    },
+];
+---
+
+<header>
+    <div class="flex justify-between p-8">
+        <h1 class="text-primary-content text-2xl">Oli Saxon</h1>
+        <nav>
+            <ul class="flex gap-2 items-center">
+                {links.map((link) => <li>{link.label}</li>)}
+            </ul>
+        </nav>
+    </div>
+</header>

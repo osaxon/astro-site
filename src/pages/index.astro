@@ -1,13 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Section from "../components/Section.astro";
 import { getCollection } from "astro:content";
 const posts = await getCollection("posts");
 ---
 
 <Layout title="Oli Saxon | Portfolio">
     <main>
-        <section class="grid grid-cols-2 p-8 gap-8">
+        <Section variant="chambray" size="large">
+            <h2 class="text-5xl font-bold">Theme</h2>
+        </Section>
+        <section transition:animate="morph" class="grid grid-cols-2 p-8 gap-8">
             {
                 posts.map((post) => {
                     return (

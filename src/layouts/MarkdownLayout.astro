@@ -2,6 +2,7 @@
 interface Props {
     title: string;
 }
+import { ViewTransitions } from "astro:transitions";
 
 const { title } = Astro.props;
 ---
@@ -14,9 +15,11 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
+        <ViewTransitions fallback="swap" />
+
         <title>{title}</title>
     </head>
-    <body class="bg-primary mx-auto max-w-3xl">
+    <body transition:animate="slide" class="bg-primary mx-auto max-w-3xl">
         <nav class="py-4">
             <a class="underline font-mono" href="/">Back</a>
         </nav>

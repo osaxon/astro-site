@@ -1,17 +1,21 @@
-export const themeMap = new Map();
-export const sizeMap = new Map();
+export const THEME_OBJ = {
+    light: "bg-light text-light-content border-light-content",
+    dark: "bg-dark text-dark-content border-dark-content",
+    lightAlt: "bg-light-alt text-light-alt-content border-light-alt-content",
+    grain: "bg-grain bg-center text-[#473354]",
+};
 
-themeMap.set("feijoa", "bg-[#8fd57b] text-[#1f2668]");
-themeMap.set("chambray", "bg-[#30528e] text-[#acdb78]");
+export const SIZE_MAP = {
+    small: "h-[40vh]",
+    default: "h-[60vh]",
+    large: "h-[80vh]",
+    full: "h-screen",
+};
 
-sizeMap.set("small", "h-[40vh]");
-sizeMap.set("default", "h-[60vh]");
-sizeMap.set("large", "h-[80vh]");
+export type Keys = keyof typeof THEME_OBJ;
+export type Sizes = keyof typeof SIZE_MAP;
 
-export type Keys = "feijoa" | "chambray";
-export type Sizes = "small" | "default" | "large";
-
-export interface SectionProps {
+export interface ISectionProps {
     variant: Keys;
     size: Sizes;
 }

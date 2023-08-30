@@ -13,7 +13,7 @@
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/preact": "^2.2.2",
     "@astrojs/tailwind": "^4.0.0",
-    "@fontsource/oi": "^5.0.8",
+    "@fontsource/space-grotesk": "^5.0.8",
     "astro": "^2.10.7",
     "clsx": "^2.0.0",
     "preact": "^10.17.0",

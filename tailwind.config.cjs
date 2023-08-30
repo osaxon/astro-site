@@ -6,9 +6,18 @@ module.exports = {
             colors: {
                 primary: "#FDAB97",
                 "primary-content": "#463064",
+                light: "#e9decd",
+                "light-content": "#d85011",
+                dark: "#412e4b",
+                "dark-content": "#f7fcc5",
+                "light-alt": "#f6efac",
+                "light-alt-content": "#6f76f4",
             },
             fontFamily: {
-                oi: ["oi"],
+                sg: ["Space-Grotesk", "Gill Sans"],
+            },
+            backgroundImage: {
+                grain: "url(/public/img/grain_bg.png)",
             },
         },
     },

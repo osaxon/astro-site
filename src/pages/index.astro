@@ -1,28 +1,64 @@
 ---
+import "../global.css";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Section from "../components/Section.astro";
 import { getCollection } from "astro:content";
 const posts = await getCollection("posts");
+const NAV = [
+    {
+        label: "Projects",
+        href: "#projects",
+    },
+    {
+        label: "Info",
+        href: "#info",
+    },
+    {
+        label: "Contact",
+        href: "#contact",
+    },
+];
 ---
 
 <Layout title="Oli Saxon | Portfolio">
-    <main>
-        <Section variant="chambray" size="large">
-            <h2 class="text-5xl font-bold">Theme</h2>
+    <main class="font-sg">
+        <Section variant="grain" size="full">
+            <h2 class="text-6xl md:text-7xl tracking-wide">Oli Saxon.</h2>
+            <p class="text-2xl md:text-3xl font-light">
+                Software developer & design enthusiast
+            </p>
+            <ul
+                class="flex flex-col items-start gap-y-2 text-xl font-light py-8"
+            >
+                {
+                    NAV.map((li) => (
+                        <a
+                            class="border-b w-48 hover:scale-110 transition-transform origin-left"
+                            href={li.href}
+                        >
+                            {li.label}
+                        </a>
+                    ))
+                }
+            </ul>
         </Section>
-        <section transition:animate="morph" class="grid grid-cols-2 p-8 gap-8">
-            {
-                posts.map((post) => {
-                    return (
-                        <Card
-                            title={post.slug}
-                            href={`/posts/${post.slug}`}
-                            body={post.data.description}
-                        />
-                    );
-                })
-            }
-        </section>
+        <Section variant="dark" size="full">
+            <h2 class="text-6xl md:text-7xl tracking-wide">Oli Saxon.</h2>
+            <p class="text-2xl md:text-3xl font-light">
+                Web developer & design enthusiast.
+            </p>
+            <ul
+                class="flex flex-col items-start gap-y-2 text-xl font-light py-8"
+            >
+                {
+                    NAV.map((li) => (
+                        <a class="border-b w-48" href={li.href}>
+                            {li.label}
+                        </a>
+                    ))
+                }
+            </ul>
+        </Section>
     </main>
 </Layout>
